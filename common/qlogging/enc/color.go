@@ -14,12 +14,11 @@ const ColorNone Color = 0
 
 const (
 	ColorBlack   Color = 30
-	ColorRed     Color = 31
-	ColorGreen   Color = 32
-	ColorYellow  Color = 33
-	ColorBlue    Color = 34
-	ColorMagenta Color = 35 // 品红
-	ColorCyan    Color = 36 // 青色
+	ColorRed     Color = 31 // => error
+	ColorYellow  Color = 33 // => warn
+	ColorBlue    Color = 34 // => info
+	ColorMagenta Color = 35 // 品红 => panic / fatal
+	ColorCyan    Color = 36 // 青色 => debug
 	ColorWhite   Color = 37
 )
 

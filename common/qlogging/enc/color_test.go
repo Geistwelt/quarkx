@@ -21,7 +21,6 @@ func TestColorReset(t *testing.T) {
 func TestNormalColors(t *testing.T) {
 	require.Equal(t, ColorBlack.Normal(), "\x1b[30m")
 	require.Equal(t, ColorRed.Normal(), "\x1b[31m")
-	require.Equal(t, ColorGreen.Normal(), "\x1b[32m")
 	require.Equal(t, ColorYellow.Normal(), "\x1b[33m")
 	require.Equal(t, ColorBlue.Normal(), "\x1b[34m")
 	require.Equal(t, ColorMagenta.Normal(), "\x1b[35m")
@@ -30,7 +29,6 @@ func TestNormalColors(t *testing.T) {
 
 	t.Log(ColorBlack.Normal() + "black" + ResetColor())
 	t.Log(ColorRed.Normal() + "red" + ResetColor())
-	t.Log(ColorGreen.Normal() + "green" + ResetColor())
 	t.Log(ColorYellow.Normal() + "yellow" + ResetColor())
 	t.Log(ColorBlue.Normal() + "blue" + ResetColor())
 	t.Log(ColorMagenta.Normal() + "magenta" + ResetColor())
@@ -41,7 +39,6 @@ func TestNormalColors(t *testing.T) {
 func TestBoldColors(t *testing.T) {
 	require.Equal(t, ColorBlack.Bold(), "\x1b[30;1m")
 	require.Equal(t, ColorRed.Bold(), "\x1b[31;1m")
-	require.Equal(t, ColorGreen.Bold(), "\x1b[32;1m")
 	require.Equal(t, ColorYellow.Bold(), "\x1b[33;1m")
 	require.Equal(t, ColorBlue.Bold(), "\x1b[34;1m")
 	require.Equal(t, ColorMagenta.Bold(), "\x1b[35;1m")
@@ -50,7 +47,6 @@ func TestBoldColors(t *testing.T) {
 
 	t.Log(ColorBlack.Bold() + "bold black" + ResetColor())
 	t.Log(ColorRed.Bold() + "bold red" + ResetColor())
-	t.Log(ColorGreen.Bold() + "bold green" + ResetColor())
 	t.Log(ColorYellow.Bold() + "bold yellow" + ResetColor())
 	t.Log(ColorBlue.Bold() + "bold blue" + ResetColor())
 	t.Log(ColorMagenta.Bold() + "bold magenta" + ResetColor())
