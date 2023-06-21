@@ -37,3 +37,43 @@ func TestRegexp2(t *testing.T) {
 	res := r.FindAllStringSubmatchIndex("%{color:d}%{message:s}", -1)
 	t.Log(res)
 }
+
+func TestRegexp3(t *testing.T) {
+	r := regexp.MustCompile(`abc\s123`)
+
+	str1 := "abc 123"
+	str2 := "abc	123"
+
+	res1 := r.FindAllStringSubmatchIndex(str1, -1)
+	res2 := r.FindAllStringSubmatchIndex(str2, -1)
+
+	t.Log(res1)
+	t.Log(res2)
+}
+
+func TestRegexp4(t *testing.T) {
+	r := regexp.MustCompile(`[^b-d^1-3^5]`)
+
+	str1 := "abcde123456"
+
+	res := r.FindAllStringSubmatchIndex(str1, -1)
+	t.Log(res)
+}
+
+func TestRegexp5(t *testing.T) {
+	r := regexp.MustCompile(`%{([#?[:alnum:]_]+)}`)
+
+	str := "prefix.%{#namespace}.%{#subsystem}.%{#name}.%{alpha}.bravo.%{bravo}.suffix"
+
+	res := r.FindAllStringSubmatchIndex(str, -1)
+	t.Log(res)
+}
+
+func TestRegexp6(t *testing.T) {
+	r := regexp.MustCompile(`[.|:\s]`)
+
+	str := "wxy.fsj hefei	|anhui|china"
+
+	str = r.ReplaceAllString(str, "-")
+	t.Log(str)
+}
