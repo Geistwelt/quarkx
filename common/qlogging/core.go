@@ -37,24 +37,6 @@ type Observer interface {
 	WriteEntry(e zapcore.Entry, fields []zapcore.Field)
 }
 
-// func (c *Core) With(fields []zapcore.Field) zapcore.Core {
-// 	clones := map[Encoding]zapcore.Encoder{}
-// 	for name, enc := range c.Encoders {
-// 		clone := enc.Clone()
-// 		addFields(clone, fields)
-// 		clones[name] = clone
-// 	}
-
-// 	return &Core{
-// 		LevelEnabler: c.LevelEnabler,
-// 		Levels:       c.Levels,
-// 		Encoders:     clones,
-// 		Selector:     c.Selector,
-// 		Output:       c.Output,
-// 		Observer:     c.Observer,
-// 	}
-// }
-
 func (c *Core) With(fields []zapcore.Field) zapcore.Core {
 	clones := map[Encoding]zapcore.Encoder{}
 	for name, enc := range c.Encoders {
