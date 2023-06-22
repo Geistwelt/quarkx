@@ -117,7 +117,7 @@ func (n *Namer) Format(labelValues ...string) string {
 			value = n.FullyQualifiedName()
 		default:
 			var ok bool
-			value, ok := labels[key]
+			value, ok = labels[key]
 			if !ok {
 				panic(fmt.Sprintf("invalid label in name format: %s", key))
 			}
