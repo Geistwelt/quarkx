@@ -113,7 +113,7 @@ func (n *Namer) Format(labelValues ...string) string {
 			value = n.subsystem
 		case "#name":
 			value = n.name
-		case "qname":
+		case "#fqname":
 			value = n.FullyQualifiedName()
 		default:
 			var ok bool
