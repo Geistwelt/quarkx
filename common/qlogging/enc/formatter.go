@@ -249,7 +249,7 @@ type ShortFuncFormatter struct {
 }
 
 func newShortFuncFormatter(format string) ShortFuncFormatter {
-	return ShortFuncFormatter{FormatVerb: stringOrDefault(format, "s")}
+	return ShortFuncFormatter{FormatVerb: "%" + stringOrDefault(format, "s")}
 }
 
 func (sff ShortFuncFormatter) Format(w io.Writer, entry zapcore.Entry, fields []zapcore.Field) {

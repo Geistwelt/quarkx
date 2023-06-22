@@ -6,8 +6,9 @@ require (
 	github.com/go-kit/kit v0.12.0
 	github.com/prometheus/client_golang v1.11.0
 	github.com/stretchr/testify v1.8.4
-	github.com/sykesm/zap-logfmt v0.0.4
-	go.uber.org/zap v1.24.0
+	github.com/sykesm/zap-logfmt v0.0.2
+	go.uber.org/zap v1.19.1
+	google.golang.org/grpc v1.40.0
 )
 
 require (
