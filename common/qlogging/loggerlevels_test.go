@@ -21,4 +21,5 @@ func TestActivateSpec(t *testing.T) {
 	require.True(t, ll.Enabled(zapcore.WarnLevel))
 	require.False(t, ll.Enabled(zapcore.InfoLevel))
 	require.Equal(t, "blockchain.ledger.block=warn:blockchain.network.consensus.T-PBFT=error:warn", ll.Spec())
+	require.Equal(t, zapcore.ErrorLevel, ll.Level("blockchain.network.consensus.T-PBFT.....Commit"))
 }

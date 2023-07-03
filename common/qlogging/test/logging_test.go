@@ -10,7 +10,7 @@ import (
 )
 
 func TestLogNormal(t *testing.T) {
-	// qlogging.ActivateSpec("test=debug")
+	qlogging.ActivateSpec("test=warn")
 	qxl := qlogging.MustGetLogger("test")
 	require.NotNil(t, qxl)
 
@@ -37,4 +37,17 @@ func TestAsyncLogging(t *testing.T) {
 	time.Sleep(time.Second)
 	// wg.Done()
 
+}
+
+func TestREADME(t *testing.T) {
+    spec := "blockchain.consensus=info:blockchain=error:warn"
+    qlogging.ActivateSpec(spec)
+
+    qxl := qlogging.MustGetLogger("blockchain.consensus.pbft")
+    qxl.Debug("blockchain.consensus.pbft")  // 不会输出
+    qxl.Info("blockchain.consensus.pbft")   // 正常输出
+
+    qxl = qlogging.MustGetLogger("blockchain.p2p.switch")
+    qxl.Info("blockchain.p2p.switch")       // 不会输出
+    qxl.Error("blockchain.p2p.switch")      // 正常输出
 }
